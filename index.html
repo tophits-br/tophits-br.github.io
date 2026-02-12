@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Top Hits Brasil</title>
+    <script type="module">
+      import QrScanner from "https://unpkg.com/qr-scanner/qr-scanner.min.js";
+    </script>
+    <link rel="stylesheet" href="style.css">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+
+    <!-- Allow web app to be run in full-screen mode -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+
+  </head>
+
+  <body>
+	<img id="logo" src="logo.png" alt="Top Hits Brasil" />
+
+    <div id="qr-reader">
+      <button id="cancelScanButton" class="button"><i class='icon-resize-small'></i></button>
+      <video id="qr-video"></video>
+    </div>
+
+    <button id="startScanButton" class="button_startscan">Ler QRCode</button>
+    <br />
+    <button id="startstop-video" class="button_startstop">Play</button>
+
+    <div id="videoid">ID do Vídeo: <span id="video-id"></span></div>
+    <div id="videotitle">Título do Video: <span id="video-title"></span></div>
+    <div id="videoduration">
+      Duração do Vídeo: <span id="video-duration"></span>
+    </div>
+    <div id="videostart">Tempo de Início: <span id="video-start"></span></div>
+
+    <hr />
+    <br/>
+    <!-- <p id="list"></p> -->
+    <div id="show_hide_settings">
+      <input type="checkbox" id="cb_settings" name="cb_settings" />
+      <label for="cb_settings"><i class='icon-cog'></i> AJUSTES</label>
+    </div>
+    <div class="settings_div hidden" id="settings_div">
+      <div class="text-block">
+        <div class="heading">Autoplay</div>
+        <div>
+          <input type="checkbox" id="autoplay" name="autoplay" checked />
+          <label for="autoplay">Início Automático</label>
+        </div>
+      </div>
+
+      <div class="text-block">
+        <div class="heading">Playback Aleatório</div>
+        <div>
+          <input type="checkbox" id="randomplayback" name="randomplayback" />
+          <label for="randomplayback">Playback Aleatório</label>
+          <br />
+          <label for="playback-duration">Duração (segundos): </label>
+                <input type="number" id="playback-duration" value="30">
+        </div>      
+    </div>
+        
+
+
+      <div class="text-block">
+        <div class="heading">Debug</div>
+        <div>
+          <input type="checkbox" id="songinfo" name="songinfo" />
+          <label for="songinfo">Exibir informações da música</label>
+                <br/>
+          <input type="checkbox" id="cookies" name="cookies" />
+          <label for="cookies">Exibir cookies</label>
+          <span id="cookielist"></span>
+                <br/>
+          <button id="debugButton" class="button">Debug Scan</button>
+        </div>
+      </div>	
+	  
+      <div class="footer-text">Powered by <a href="https://github.com/andygruber/songseeker/" target="_blank">SongSeeker</a>.</div>
+    </div>
+
+    <div id="player"></div> <!-- Load YouTube Player -->
+
+    <script type="module" src="app.js?version=20250830"></script>
+  </body>
+</html>
