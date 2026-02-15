@@ -403,6 +403,23 @@ document.getElementById('cb_settings').addEventListener('click', function() {
     }
 });
 
+document.getElementById('sleepon').addEventListener('click', function() {
+      var noSleep = new NoSleep();
+      var wakeLockEnabled = false;
+      var toggleEl = document.querySelector("#sleepon");
+      toggleEl.addEventListener('click', function() {
+        if (!wakeLockEnabled) {
+          noSleep.enable(); // keep the screen on!
+          wakeLockEnabled = true;
+          toggleEl.value = "A tela ficará ativa";
+        } else {
+          noSleep.disable(); // let the screen turn off.
+          wakeLockEnabled = false;
+          toggleEl.value = "Manter a tela ativa?";
+        }
+      }, false);
+});
+
 document.getElementById('randomplayback').addEventListener('click', function() {
     document.cookie = "RandomPlaybackChecked=" + this.checked + ";max-age=2592000"; //30 Tage
     listCookies();
