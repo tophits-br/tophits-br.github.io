@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
   <head>
@@ -57,34 +57,42 @@
         <div class="heading">Playback Aleatório</div>
         <div>
           <input type="checkbox" id="randomplayback" name="randomplayback" />
-          <label for="randomplayback">Playback Aleatório</label>
+          <label for="randomplayback">Playback aleatório</label>
           <br />
           <label for="playback-duration">Duração (segundos): </label>
-                <input type="number" id="playback-duration" value="30">
+          <input type="number" id="playback-duration" value="30">
         </div>      
+    </div>
+	  
+    <div class="text-block">
+      <div class="heading">Tela Acesa</div>
+      <div>
+        <input type="button" id="screenon" class="button" value="Manter Tela Ativa?" />
+      </div>
     </div>
         
 
 
-      <div class="text-block">
-        <div class="heading">Debug</div>
-        <div>
-          <input type="checkbox" id="songinfo" name="songinfo" />
-          <label for="songinfo">Exibir informações da música</label>
-                <br/>
-          <input type="checkbox" id="cookies" name="cookies" />
-          <label for="cookies">Exibir cookies</label>
-          <span id="cookielist"></span>
-                <br/>
-          <button id="debugButton" class="button">Debug Scan</button>
-        </div>
-      </div>	
+    <div class="text-block">
+      <div class="heading">Debug</div>
+      <div>
+        <input type="checkbox" id="songinfo" name="songinfo" />
+        <label for="songinfo">Exibir informações da música</label>
+              <br/>
+        <input type="checkbox" id="cookies" name="cookies" />
+        <label for="cookies">Exibir cookies</label>
+        <span id="cookielist"></span>
+              <br/>
+        <button id="debugButton" class="button">Debug Scan</button>
+      </div>
+    </div>
 	  
-      <div class="footer-text">Powered by <a href="https://github.com/andygruber/songseeker/" target="_blank">SongSeeker</a>.</div>
+    <div class="footer-text">Powered by <a href="https://github.com/andygruber/songseeker/" target="_blank">SongSeeker</a>.</div>
     </div>
 
     <div id="player"></div> <!-- Load YouTube Player -->
 
+	<script src="https://github.com/richtr/NoSleep.js/blob/master/dist/NoSleep.min.js"></script>
     <script type="module" src="app.js?version=20250830"></script>
   </body>
 </html>
