@@ -403,23 +403,6 @@ document.getElementById('cb_settings').addEventListener('click', function() {
     }
 });
 
-document.getElementById('sleepon').addEventListener('click', function() {
-      var noSleep = new NoSleep();
-      var wakeLockEnabled = false;
-      var toggleEl = document.querySelector("#sleepon");
-      toggleEl.addEventListener('click', function() {
-        if (!wakeLockEnabled) {
-          noSleep.enable(); // keep the screen on!
-          wakeLockEnabled = true;
-          toggleEl.value = "A tela ficará ativa";
-        } else {
-          noSleep.disable(); // let the screen turn off.
-          wakeLockEnabled = false;
-          toggleEl.value = "Manter a tela ativa?";
-        }
-      }, false);
-});
-
 document.getElementById('randomplayback').addEventListener('click', function() {
     document.cookie = "RandomPlaybackChecked=" + this.checked + ";max-age=2592000"; //30 Tage
     listCookies();
@@ -429,6 +412,22 @@ document.getElementById('autoplay').addEventListener('click', function() {
     document.cookie = "autoplayChecked=" + this.checked + ";max-age=2592000"; //30 Tage
     listCookies();
 });
+
+// Manter a tela do celular ligada
+	  var noSleep = new NoSleep();
+      var wakeLockEnabled = false;
+      var toggleEl = document.querySelector("#screenon");
+      toggleEl.addEventListener('click', function() {
+        if (!wakeLockEnabled) {
+          noSleep.enable(); // keep the screen on!
+          wakeLockEnabled = true;
+          toggleEl.value = "Manter acesa";
+        } else {
+          noSleep.disable(); // let the screen turn off.
+          wakeLockEnabled = false;
+          toggleEl.value = "Deixar apagar";
+        }
+      }, false);
 
 document.getElementById('cookies').addEventListener('click', function() {
     var cb = document.getElementById('cookies');
