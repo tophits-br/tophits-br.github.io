@@ -5,19 +5,40 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  height: 100%;
   box-sizing: border-box;
 }
 
 body {
   font-family: "Montserrat", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #242974 0%, #663399 100%);
+  background: linear-gradient(135deg, #171e6f 0%, #b2169d 100%);
   color: #fff;
+  height: 100%;
   min-height: 100vh;
   text-align: center;
   padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+main {
+  flex: 1 0 auto;
+  text-align: center;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer {
+  width: 100%;
+  padding: 0.8rem;
+  border-top: 2px solid #ff512f;
 }
 
 h2 {
@@ -47,7 +68,7 @@ hr {
   border: none;
   height: 0.15rem;
   background: linear-gradient(90deg, #ff512f 0%, #dd2476 100%);
-  margin: 2rem 0;
+  margin: 0.8rem 0;
   border-radius: 1rem;
 }
 
@@ -66,7 +87,7 @@ hr {
   font-size: 1.1rem;
   font-weight: 700;
   padding: 0.25rem 1rem;
-  margin: 0.7rem 0.5rem;
+  margin: 0.5rem 0.5rem;
   border: none;
   border-radius: 0.5rem;
   box-shadow: 0 0.25rem 1rem rgba(221, 36, 118, 0.15);
@@ -161,14 +182,15 @@ hr {
   color: #fff;
 }
 
-.settings_div {
+.settings_div,
+.gift_div {
   width: 100%;
   max-width: 32rem;
-  margin: 2rem auto 0 auto;
+  margin: 0 auto 0 auto;
   background: rgba(255, 255, 255, 0.09);
-  border-radius: 1.1rem;
+  border-radius: 1rem;
   box-shadow: 0 0.15rem 0.8rem rgba(30, 60, 114, 0.12);
-  padding: 1.5rem 1rem 1rem 1rem;
+  padding: 0.5rem 0 0 0;
   position: static;
   display: none;
   flex-direction: column;
@@ -176,7 +198,7 @@ hr {
 
 .text-block {
   position: relative;
-  margin-bottom: 2rem;
+  margin: 1rem 0.4rem 1.2rem;
   padding: 1rem 0.8rem 0.8rem 0.8rem;
   text-align: center;
   border: 1px solid #ff512f;
@@ -187,15 +209,15 @@ hr {
 
 .text-block .heading {
   position: absolute;
-  top: -0.8rem;
+  top: -0.7rem;
   left: 50%;
   transform: translateX(-50%);
   padding: 0 0.7rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
   background: linear-gradient(90deg, #ff512f 0%, #dd2476 100%);
   color: #fff;
-  border-radius: 0.6rem;
+  border-radius: 0.5rem;
   box-shadow: 0 0.15rem 0.5rem rgba(221, 36, 118, 0.07);
 }
 
@@ -208,7 +230,7 @@ input[type="number"] {
   border: none;
 }
 
-label {
+label, #manual a {
   font-size: 1.1rem;
   font-weight: 400;
   letter-spacing: 2px;
@@ -218,20 +240,43 @@ label {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin: 0 0.4rem;
+  cursor: pointer;
 }
 
-#cb_settings {
-  opacity: 0;
+#meupix {
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-align: center;
+  background: linear-gradient(90deg, #ff512f 0%, #dd2476 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: block;
+  margin: 0.4rem auto 0;
+  border: 0;
+}
+
+#manual a:hover {
+  text-shadow: none;
+}
+
+#cb_settings,
+#cb_gift {
+  display: none;
   margin-left: -1rem;
 }
 
-#cb_settings label {
+#cb_settings,
+#cb_gift label {
   opacity: 1;
 }
 
-#show_hide_settings {
+#show_hide_settings,
+#show_hide_gift,
+#manual {
   display: flex;
   flex-direction: row;
+  margin-top: 0.2rem;
 }
 
 #playback-duration {
@@ -250,10 +295,7 @@ label {
 
 .footer-text {
   position:relative;
-  bottom:0;
-  width: 100%;
-  margin-top: 2rem;
-  text-align: center;
+  text-align: left;
 }
 
 /* Animation for correct/incorrect guess feedback */
