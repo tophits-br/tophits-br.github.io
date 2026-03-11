@@ -403,6 +403,24 @@ document.getElementById('cb_settings').addEventListener('click', function() {
     }
 });
 
+document.getElementById('cb_gift').addEventListener('click', function() {
+    var cb = document.getElementById('cb_gift');
+    if (cb.checked == true) {
+        document.getElementById('gift_div').style.display = 'block';
+    }
+    else {
+        document.getElementById('gift_div').style.display = 'none';
+    }
+});
+
+function copiarPix() {
+  var texto = document.getElementById("meupix").value;
+  if (navigator.clipboard.writeText(texto)) {
+	document.getElementById("copiapix").textContent = "Copiado";
+  }
+  console.log(texto);
+}
+
 document.getElementById('randomplayback').addEventListener('click', function() {
     document.cookie = "RandomPlaybackChecked=" + this.checked + ";max-age=2592000"; //30 Tage
     listCookies();
