@@ -413,14 +413,6 @@ document.getElementById('cb_gift').addEventListener('click', function() {
     }
 });
 
-function copiarPix() {
-  var texto = document.getElementById("meupix").value;
-  if (navigator.clipboard.writeText(texto)) {
-	document.getElementById("copiapix").textContent = "Copiado";
-  }
-  console.log(texto);
-}
-
 document.getElementById('randomplayback').addEventListener('click', function() {
     document.cookie = "RandomPlaybackChecked=" + this.checked + ";max-age=2592000"; //30 Tage
     listCookies();
